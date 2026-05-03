@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AdminLayout } from '@sidekick-coder/zenith-kit/client';
+import { AdminLayout } from '@sidekick-coder/zenith-kit/components';
 </script>
 
 <template>
