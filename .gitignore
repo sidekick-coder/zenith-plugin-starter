@@ -1,0 +1,7 @@
+.env
+config.yml
+*.db
+node_modules/
+config/*
+!config/.gitkeep
+dist

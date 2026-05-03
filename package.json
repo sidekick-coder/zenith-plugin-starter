@@ -1,0 +1,19 @@
+{
+    "name": "zenith-plugin-starter",
+    "version": "0.0.1",
+    "scripts": {
+        "zkit": "zkit",
+        "start": "zkit start",
+        "dev": "zkit dev",
+        "build": "zkit build"
+    },
+    "imports": {
+        "#client/*": "./client/*",
+        "#server/*": "./server/*",
+        "#shared/*": "./shared/*"
+    },
+    "dependencies": {
+        "@sidekick-coder/zenith-kit": "^0.0.11",
+        "@vue/tsconfig": "^0.9.1"
+    }
+}
