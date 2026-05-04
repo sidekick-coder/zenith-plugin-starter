@@ -3,7 +3,6 @@ import path from 'node:path'
 
 export default class PluginStarter extends PluginEntity {
     public async load() {
-        console.log('Loading plugin: zenith-plugin-api')
         await this.addApiFolder(path.resolve(import.meta.dirname, 'api'))
     }
 }

@@ -1,4 +1,4 @@
-import { PluginEntity, authGuard } from '@sidekick-coder/zenith-kit/client'
+import { PluginEntity, authGuard, menu } from '@sidekick-coder/zenith-kit/client'
 
 export default class extends PluginEntity {
     public async load() {
@@ -14,6 +14,13 @@ export default class extends PluginEntity {
             guards: [authGuard]
         })
 
+        menu.add({
+            label: 'Starter',
+            icon: 'lucide:box',
+            group: $t('Modules'),
+            layout: 'admin',
+            to: `/admin/${this.id}`,
+        })
     }
 }
 
