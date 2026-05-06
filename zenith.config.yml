@@ -1,0 +1,6 @@
+kit:
+    module_id: "plugin-starter"
+build:
+    server:
+        entries:
+            "api/*": "src/server/api/**/*.ts"

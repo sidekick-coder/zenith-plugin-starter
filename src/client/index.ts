@@ -1,4 +1,5 @@
 import { PluginEntity, authGuard, menu } from '@sidekick-coder/zenith-kit/client'
+import './assets/styles.css'
 
 export default class extends PluginEntity {
     public async load() {

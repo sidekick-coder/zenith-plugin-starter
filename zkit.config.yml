@@ -1,4 +1,0 @@
-module_id: "plugin-starter"
-server:
-    entries:
-        "api/*": "src/server/api/**/*.ts"
