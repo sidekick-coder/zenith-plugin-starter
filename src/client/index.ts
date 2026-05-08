@@ -18,7 +18,7 @@ export default class extends PluginEntity {
         menu.add({
             label: 'Starter',
             icon: 'lucide:box',
-            group: $t('Modules'),
+            group: $t('Plugins'),
             layout: 'admin',
             to: `/admin/${this.id}`,
         })
