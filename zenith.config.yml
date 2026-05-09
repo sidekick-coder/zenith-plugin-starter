@@ -4,3 +4,5 @@ build:
     server:
         entries:
             "api/*": "src/server/api/**/*.ts"
+            "migrations/*": "src/server/migrations/**/*.ts"
+            "seeders/*": "src/server/seeders/**/*.ts"
