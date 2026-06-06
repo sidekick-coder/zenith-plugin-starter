@@ -1,5 +1,10 @@
-kit:
-    module_id: "plugin-starter"
+name: myplugin
+description: A plugin for zenith
+aliases:
+    - myplugin
+version_available_channels:
+    - branch:main
+    - branch:build
 build:
     server:
         entries:
