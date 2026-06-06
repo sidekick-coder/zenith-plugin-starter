@@ -2,9 +2,8 @@
     "name": "zenith-plugin-starter",
     "version": "0.0.1",
     "scripts": {
-        "zkit": "zkit",
-        "start": "zkit start",
-        "dev": "zkit dev",
+        "start": "NODE_PRODUCTION=true zenith serve",
+        "dev": "zenith serve",
         "build": "zkit build"
     },
     "imports": {
