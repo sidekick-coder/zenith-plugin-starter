@@ -19,6 +19,7 @@
     },
     "include": [
         "src/client/**/**/*.ts",
+        "src/client/**/**/*.d.ts",
         "src/client/**/**/*.vue",
         "src/shared/**/**/*.ts"
     ]

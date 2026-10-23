@@ -1,8 +1,13 @@
-import { PluginEntity } from '@sidekick-coder/zenith-kit/server'
+import { emmitter, router } from '@sidekick-coder/zenith-kit/server'
+import { definePlugin } from '@sidekick-coder/zenith-kit/shared'
 import path from 'node:path'
 
-export default class PluginStarter extends PluginEntity {
-    public async load() {
-        await this.addApiFolder(path.resolve(import.meta.dirname, 'api'))
-    }
-}
+export default definePlugin(async () => {
+    emmitter.on('router:registered', async () => {
+        await router.addFileBaseRoutes(path.resolve(import.meta.dirname, 'api'), {
+            prefix: '/api/starter',
+            identifier: 'starter',
+        })
+    })
+})
+

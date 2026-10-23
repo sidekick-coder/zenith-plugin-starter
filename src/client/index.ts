@@ -1,18 +1,20 @@
-import { PluginEntity, authGuard, menu } from '@sidekick-coder/zenith-kit/client'
-import './assets/styles.css'
+import { authGuard, router, lifecycle, menu } from '@sidekick-coder/zenith-kit/client'
+import type { DefineComponent } from 'vue'
+import { definePlugin } from '@sidekick-coder/zenith-kit/shared'
 
-export default class extends PluginEntity {
-    public async load() {
-        this.addPagesFolder(import.meta.glob('./pages/admin/**/*.vue'), {
+export default definePlugin(async () => {
+    const id = 'starter'
+
+    lifecycle.on('load', async () => {
+        router.auto(import.meta.glob<DefineComponent>('./pages/admin/**/*.vue'), {
             strip: ['pages', 'admin'],
-            prefix: `/admin/${this.id}`,
+            prefix: `/admin/${id}`,
             guards: [authGuard]
         })
 
-        this.addPagesFolder(import.meta.glob('./pages/public/**/*.vue'), {
+        router.auto(import.meta.glob<DefineComponent>('./pages/public/**/*.vue'), {
             strip: ['pages', 'public'],
-            prefix: this.id,
-            guards: [authGuard]
+            prefix: id,
         })
 
         menu.add({
@@ -20,8 +22,8 @@ export default class extends PluginEntity {
             icon: 'lucide:box',
             group: $t('Plugins'),
             layout: 'admin',
-            to: `/admin/${this.id}`,
+            to: `/admin/${id}`,
         })
-    }
-}
+    })
+})
 

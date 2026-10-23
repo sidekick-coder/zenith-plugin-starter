@@ -3,17 +3,20 @@
     "version": "0.0.1",
     "scripts": {
         "start": "NODE_PRODUCTION=true zenith serve",
-        "dev": "zenith serve",
-        "build": "zkit build"
+        "dev": "zenith serve -w",
+        "build": "zenith plugin:build"
     },
     "imports": {
-        "#client/*": "./client/*",
-        "#server/*": "./server/*",
-        "#shared/*": "./shared/*"
+        "#client/*": "./src/client/*",
+        "#server/*": "./src/server/*",
+        "#shared/*": "./src/shared/*"
     },
     "dependencies": {
-        "@sidekick-coder/zenith-kit": "^0.0.11",
+        "@sidekick-coder/zenith-kit": "^0.4.14",
         "@vue/tsconfig": "^0.9.1",
         "kysely": "^0.28.17"
+    },
+    "devDependencies": {
+        "vite": "^7.3.7"
     }
 }
