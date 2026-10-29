@@ -2,9 +2,12 @@
     "name": "zenith-plugin-starter",
     "version": "0.0.1",
     "scripts": {
-        "start": "NODE_PRODUCTION=true zenith serve",
+        "start": "NODE_ENV=production zenith serve",
         "dev": "zenith serve -w",
-        "build": "zenith plugin:build"
+        "build": "npm-run-all build:server build:client-node build:client-browser",
+        "build:server": "tsdown",
+        "build:client-node": "vite build --config vite.config.node.ts",
+        "build:client-browser": "vite build --config vite.config.browser.ts"
     },
     "imports": {
         "#client/*": "./src/client/*",
@@ -14,9 +17,11 @@
     "dependencies": {
         "@sidekick-coder/zenith-kit": "^0.4.15",
         "@vue/tsconfig": "^0.9.1",
-        "kysely": "^0.28.17"
+        "kysely": "^0.28.17",
+        "npm-run-all": "^4.1.5"
     },
     "devDependencies": {
+        "tsdown": "^0.23.4",
         "vite": "^7.3.7"
     }
 }
