@@ -25,6 +25,7 @@
     "strictPropertyInitialization": false
   },
   "include": [
+    "bin/**/*.ts",
     "src/server/**/*.ts",
     "src/shared/**/*.ts"
   ]
