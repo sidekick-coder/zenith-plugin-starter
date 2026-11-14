@@ -6,6 +6,7 @@ export default defineConfig({
         'src/server/api/**/*.ts',
         'src/server/migrations/**/*.ts',
         'src/server/seeders/**/*.ts',
+        'src/server/commands/**/*.ts',
     ],
     outDir: 'dist/server',
     tsconfig: 'tsconfig.server.json',

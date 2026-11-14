@@ -1,4 +1,4 @@
-id: myplugin
+id: starter
 name: my-plugin
 description: A plugin for zenith
 branches:
